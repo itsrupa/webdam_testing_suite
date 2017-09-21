@@ -1,0 +1,25 @@
+{
+  "name": "webdam_testing_suite",
+  "version": "1.0.0",
+  "description": "Tests for Webdam QA API Interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsrupa/webdam_testing_suite.git"
+  },
+  "author": "Rupa Maiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsrupa/webdam_testing_suite/issues"
+  },
+  "homepage": "https://github.com/itsrupa/webdam_testing_suite#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "request": "^2.82.0",
+    "should": "^13.0.1"
+  }
+}
