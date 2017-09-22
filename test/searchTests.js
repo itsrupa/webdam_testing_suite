@@ -165,6 +165,61 @@ describe("Search with invalid Sort Input", function(){
 
 });
 
+describe("Search with invalid Sort Input", function(){
+	var body;
+	var res;
+	var access_token;
+
+	before(function(done) {
+		request.post({ url: config["baseUrl"] + "/oauth/token", 
+			form: {
+				"grant_type": "client_credentials",
+				"client_id": config["client_id"],
+				"client_secret": config["client_secret"],
+				"scope": "*"
+			},
+			json: true
+		},
+		function(error, r, b){
+			access_token = b.access_token;
+			request.get({ url: config["baseUrl"] + "/api/v1/login", 
+				headers: {
+					Authorization: access_token
+				},
+				json: true
+			},
+			function(error, r, b){
+				request.get({ url: config["baseUrl"] + "/api/v1/search?query=a&sort=abcde&limit=2", 
+					headers: {
+						Authorization: access_token
+					},
+					json: true
+				},
+				function(error, r, b){
+					res = r;
+					body = b;
+					done();
+				});
+			});
+		});
+	});
+
+	it("has valid response code in the response", function(done) {
+		assert.exists(res.statusCode, "Did not find the Status Code in the response");
+		assert(res.statusCode == 422, "Did not receive the 422 Unprocessable Entity as the status code");
+		done();
+
+	});
+
+	it("has expected key for error in limit", function(done) {
+		assert.exists(body.sort, "Did not find the 'sort' in the response");
+		assert(body.sort == "The sort may not be greater than 4 characters.", "Expected Error message for Sort greater than 4 chars was not received");
+		done();
+
+	});
+
+});
+
 describe("Search and Sort Results in Ascending Order", function(){
 	var body;
 	var res;
@@ -665,8 +720,8 @@ describe("Search for one letter in query", function(){
 
 	});
 
-	it("has returned no results for query", function(done) {
-		assert(body.length == 0, "Did not receive the expected number of Assets in the response");
+	it("has returned 1 results for query", function(done) {
+		assert(body.length == 1, "Did not receive the expected number of Assets in the response");
 		done();
 
 	});
