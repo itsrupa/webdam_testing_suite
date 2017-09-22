@@ -4,7 +4,7 @@
   "description": "Tests for Webdam QA API Interview",
   "main": "index.js",
   "scripts": {
-    "test": "mocha || echo"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
