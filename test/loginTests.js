@@ -5,7 +5,7 @@ var assert = require("chai").assert;
 var util = require("util");
 var config = require('../config');
 
-describe("Successful Log In", function(){
+describe("Successful Login", function(){
 	var body;
 	var res;
 	var access_token;
@@ -53,7 +53,7 @@ describe("Successful Log In", function(){
 
 });
 
-describe("Log In with POST instead GET", function(){
+describe("Login with POST instead GET", function(){
 	var body;
 	var res;
 	var access_token;
@@ -93,7 +93,7 @@ describe("Log In with POST instead GET", function(){
 
 });
 
-describe("Log In with bad access_token", function(){
+describe("Login with bad access_token", function(){
 	var body;
 	var res;
 	var access_token;
@@ -119,7 +119,6 @@ describe("Log In with bad access_token", function(){
 			function(error, r, b){
 				res = r;
 				body = b;
-				console.log(body);
 				done();
 			});
 		});

@@ -5,7 +5,7 @@ var assert = require("chai").assert;
 var util = require("util");
 var config = require('../config');
 
-describe("Successful Log Out", function(){
+describe("Successful Logout", function(){
 	var body;
 	var res;
 	var access_token;
@@ -53,7 +53,7 @@ describe("Successful Log Out", function(){
 
 
 	it("has expected key for logout in the response", function(done) {
-		assert.exists(body.logged_out, "Did not find the 'logged_out' in the response");
+		assert.exists(body.logged_out, "Did not find the 'logged_out' in the response instead found '" + Object.keys(body)[0]);
 		assert.isTrue(body.logged_out, "'logged_out' is not set to true");
 		done();
 
@@ -61,7 +61,7 @@ describe("Successful Log Out", function(){
 
 });
 
-describe("Retrieve Assets after Log Out", function(){
+describe("Retrieve Assets after Logout", function(){
 	var body;
 	var res;
 	var access_token;

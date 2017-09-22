@@ -56,7 +56,7 @@ describe("Successful Authentication", function(){
 });
 
 //-----------------------------------------------------------------------------------------------------------------------------
-describe("Authentication with Invalid Grant Type", function(){
+describe("Authentication with Invalid Grant Type '123'", function(){
 	var body;
 	var res;
 	before(function(done) {
@@ -210,7 +210,7 @@ describe("Authentication with Missing Grant Type", function(){
 });
 
 //-----------------------------------------------------------------------------------------------------------------------------
-describe("Authentication with Invalid Client ID", function(){
+describe("Authentication with Invalid Client ID 'a'", function(){
 	var body;
 	var res;
 	before(function(done) {
@@ -356,7 +356,7 @@ describe("Authentication with Missing Client ID", function(){
 });
 
 //-----------------------------------------------------------------------------------------------------------------------------
-describe("Authentication with Invalid Client Secret", function(){
+describe("Authentication with Invalid Client Secret 'Junk'", function(){
 	var body;
 	var res;
 	before(function(done) {
@@ -487,7 +487,7 @@ describe("Authentication with Missing Client Secret", function(){
 });
 
 //-----------------------------------------------------------------------------------------------------------------------------
-describe("Authentication with Invalid Scope", function(){
+describe("Authentication with Invalid Scope '123'", function(){
 	var body;
 	var res;
 	before(function(done) {

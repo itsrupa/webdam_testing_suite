@@ -5,7 +5,7 @@ var assert = require("chai").assert;
 var util = require("util");
 var config = require('../config');
 
-describe("Search with invalid Limit Input", function(){
+describe("Search with invalid Limit Input 'a'", function(){
 	var body;
 	var res;
 	var access_token;
@@ -61,7 +61,7 @@ describe("Search with invalid Limit Input", function(){
 
 });
 
-describe("Search with Invalid Limit Input", function(){
+describe("Search with Invalid Limit Input '12'", function(){
 	var body;
 	var res;
 	var access_token;
@@ -117,7 +117,7 @@ describe("Search with Invalid Limit Input", function(){
 
 });
 
-describe("Search with invalid Sort Input", function(){
+describe("Search with invalid Sort Input 'abc'", function(){
 	var body;
 	var res;
 	var access_token;
@@ -165,7 +165,7 @@ describe("Search with invalid Sort Input", function(){
 
 });
 
-describe("Search with invalid Sort Input", function(){
+describe("Search with invalid Sort Input 'abcde'", function(){
 	var body;
 	var res;
 	var access_token;
